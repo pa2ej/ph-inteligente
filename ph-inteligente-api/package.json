@@ -1,0 +1,30 @@
+{
+  "name": "ph-inteligente-api",
+  "version": "2.0.0",
+  "description": "API REST PH Inteligente — Node.js + Express + SQL Server",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev":        "nodemon src/index.js",
+    "start":      "node src/index.js",
+    "db:schema":  "sqlcmd -S %DB_SERVER% -U %DB_USER% -P %DB_PASSWORD% -i sql/01_schema.sql",
+    "db:seed":    "sqlcmd -S %DB_SERVER% -U %DB_USER% -P %DB_PASSWORD% -d ph_inteligente -i sql/02_seed.sql"
+  },
+  "dependencies": {
+    "bcryptjs":          "^2.4.3",
+    "cors":              "^2.8.5",
+    "dotenv":            "^16.4.5",
+    "express":           "^4.19.2",
+    "express-validator": "^7.1.0",
+    "helmet":            "^7.1.0",
+    "jsonwebtoken":      "^9.0.2",
+    "morgan":            "^1.10.0",
+    "mssql":             "^11.0.1",
+    "puppeteer":         "^22.12.1",
+    "handlebars":        "^4.7.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "engines": { "node": ">=18.0.0" }
+}
